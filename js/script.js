@@ -32,6 +32,17 @@ let result = 'niewiadoma';
 
 if(playerMove == computerMove){
     result = 'Remis';
-}
-
+}else if( computerMove == 'kamień' && playerMove == 'papier'){
+    result = 'Ty wygrywasz';
+}else if( computerMove == 'papier' && playerMove == 'nożyce'){
+    result = 'Ty wygrywasz';
+}else if( computerMove == 'nożyce' && playerMove == 'kamień'){
+    result = 'Ty wygrywasz';
+}else if( computerMove == 'papier' && playerMove == 'kamień'){
+    result = 'Przegrywasz';
+}else if( computerMove == 'nożyce' && playerMove == 'papier'){
+    result = 'Przegrywasz';
+}else if( computerMove == 'kamień' && playerMove == 'nożyce'){
+    result = 'Przegrywasz';
+}else{result = "niema takiego ruchu miałeś wpisac 1,2,3" }
 printMessage('Wynik: ' + result)
