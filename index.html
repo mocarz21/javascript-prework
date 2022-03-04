@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> 
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="container">
-		<div id="buttons"></div>
-		<div id="messages"></div>
-        
-	</div>
-    
+    <section class="main">
+		<h1>choose your destiny</h1>
+		<div>
+			<div class="game_field">
+				<button id="kamien" type="button"><img  src="\images\kamien.webp" alt="kamien"></button>
+				<button id="papier" type="button"><img src="\images\papier.webp" alt="papier"></button>
+				<button id="nozyce" type="button"><img src="\images\nozyce.webp" alt="nozyce"></button>
+			</div>
+		</div>
+	</section>
+	<section class="who_win">
+		<div class="container">
+			<div id="buttons"></div>
+			<div id="messages"></div>
+		</div>
+	</section>	
     <script src="js/functions.js"></script>
 	<script src="js/script.js"></script>
 </body>
