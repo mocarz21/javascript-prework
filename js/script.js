@@ -1,48 +1,43 @@
-
+function getMoveName(argMoveId){
+    if(argMoveId == 1){
+        return 'kamień';
+    }else if(argMoveId == 2){
+        return 'papier';
+    }else if(argMoveId == 3){
+        return 'nożyce';
+    }else
+    printMessage('Nie znam ruchu o id ' + argMoveId + '.');
+    return 'nieznany ruch';
+}
+function displayResult(argComputerMove, argPlayerMove){
+    if(argComputerMove == argPlayerMove){
+       return 'Remis';
+    }else if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+        return 'Ty wygrywasz';
+    }else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+        return 'Ty wygrywasz';
+    }else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+        return 'Ty wygrywasz';
+    }else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+        return 'Przegrywasz';
+    }else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+        return 'Przegrywasz';
+    }else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+        return 'Przegrywasz';
+    }else{
+        return "niema takiego ruchu miałeś wpisac 1,2,3";
+    }
+}  
 
 let randomNumber = Math.floor(Math.random() * 3 + 1);
-
-console.log('Wylosowana liczba to: ' + randomNumber);
-
-let computerMove = 'nieznany ruch';
-
-if(randomNumber == 1){
-    computerMove = 'kamień';
-}else if(randomNumber == '2'){
-    computerMove = 'papier';
-}else if(randomNumber == '3'){
-    computerMove = 'nożyce';
-}
-printMessage('Mój ruch to: ' + computerMove);
+let computerMove = getMoveName(randomNumber);
 let playerInput = prompt('wybierz swój ruch! 1: kamień 2:papier 3:nozyce');
-console.log('Gracz wpisał'+ playerInput);
-let playerMove = 'nieznany ruch';
-if(playerInput == '1'){
-    playerMove = 'kamień';
-}else if(playerInput == '2'){
-    playerMove = 'papier';
-}else if(playerInput == '3'){
-    playerMove = 'nożyce';
-}
+let playerMove = getMoveName(playerInput);
 
-printMessage('twoj ruch to ' +playerMove)
+printMessage('twoj ruch to ' + playerMove);
+printMessage('Mój ruch to: ' + computerMove);
 
-let result = 'niewiadoma';
+let result = displayResult(computerMove, playerMove);
 
-
-if(playerMove == computerMove){
-    result = 'Remis';
-}else if( computerMove == 'kamień' && playerMove == 'papier'){
-    result = 'Ty wygrywasz';
-}else if( computerMove == 'papier' && playerMove == 'nożyce'){
-    result = 'Ty wygrywasz';
-}else if( computerMove == 'nożyce' && playerMove == 'kamień'){
-    result = 'Ty wygrywasz';
-}else if( computerMove == 'papier' && playerMove == 'kamień'){
-    result = 'Przegrywasz';
-}else if( computerMove == 'nożyce' && playerMove == 'papier'){
-    result = 'Przegrywasz';
-}else if( computerMove == 'kamień' && playerMove == 'nożyce'){
-    result = 'Przegrywasz';
-}else{result = "niema takiego ruchu miałeś wpisac 1,2,3" }
 printMessage('Wynik: ' + result)
+
