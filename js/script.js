@@ -47,23 +47,12 @@ function playGame(playerInput){
 
     console.log('moves:', computerMove, playerMove);
 }
-function buttonClicked(a){
-    printMessage('a');
-  }
-  let kamien = document.getElementById('kamien');
-  kamien.addEventListener('click', buttonClicked);
-
-function buttonClicked(b){
-    printMessage('ay');
-  }
-  let papier = document.getElementById('papier');
-  papier.addEventListener('click', buttonClicked);
-
-function buttonClicked(c){
-    printMessage('c');
-  }
-  let nozyce = document.getElementById('nozyce');
-  nozyce.addEventListener('click', buttonClicked);
-  
-}
- console.log('moves:', computerMove, playerMove);
+document.getElementById('kamien').addEventListener('click', function(){
+    playGame("1")
+});
+document.getElementById('papier').addEventListener('click', function(){
+    playGame('2');
+});
+document.getElementById('nozyce').addEventListener('click', function(){
+    playGame('3');
+});

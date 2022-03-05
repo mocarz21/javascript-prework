@@ -15,7 +15,7 @@ body{
         font-size: 68px;
         text-transform: uppercase;
         color: rgb(46, 197, 58);
-        top: 25%;
+        top: 20%;
         left: 50%;
         transform: translate(-50%,-50%);
         position: absolute;
@@ -27,12 +27,22 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    div{
-    }
     img{
         border-radius: 50%;
         justify-content: center;
         align-items: center;
     }
-    
+button{
+    border-radius: 50%; 
+}    
+
+}
+.container{
+    position: absolute;
+    text-align: center;
+    font-size: 60px;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
 }
