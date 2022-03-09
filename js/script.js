@@ -1,6 +1,6 @@
-function playGame(playerInput){
+const playGame=function(playerInput){
     clearMessages();
-    function getMoveName(argMoveId){
+    const getMoveName=function(argMoveId){
         if(argMoveId == 1){
             return 'kamień';
         }else if(argMoveId == 2){
@@ -11,7 +11,7 @@ function playGame(playerInput){
         printMessage('Nie znam ruchu o id ' + argMoveId + '.');
         return 'nieznany ruch';
     }
-    function displayResult(argComputerMove, argPlayerMove){
+    const displayResult=function(argComputerMove, argPlayerMove){
         if(argComputerMove == argPlayerMove){
         return 'Remis';
         }else if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
@@ -31,21 +31,15 @@ function playGame(playerInput){
         }
     }  
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    /*
-    let playerInput = prompt('wybierz swój ruch! 1: kamień 2:papier 3:nozyce');
-    */
-    let playerMove = getMoveName(playerInput);
-
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    const computerMove = getMoveName(randomNumber);
+    const playerMove = getMoveName(playerInput);
+    const result = displayResult(computerMove, playerMove);
+  
     printMessage('twoj ruch to ' + playerMove);
     printMessage('Mój ruch to: ' + computerMove);
-
-    let result = displayResult(computerMove, playerMove);
-
     printMessage('Wynik: ' + result)
 
-    console.log('moves:', computerMove, playerMove);
 }
 document.getElementById('kamien').addEventListener('click', function(){
     playGame("1")
